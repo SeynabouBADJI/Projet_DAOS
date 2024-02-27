@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+        <link rel="stylesheet" href="../static/css/buttons.dataTables.min.css" th:href="@{/css/buttons.dataTables.min.css}"/>
+        <link rel="stylesheet" href="../static/css/jquery.dataTables.min.css" th:href="@{/css/jquery.dataTables.min.css}"/>
+
+        <script src="../static/js/jquery-3.7.0.js" th:src="@{/js/jquery-3.7.0.js}"></script>
+        <script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+        <script src="../static/js/dataTables.buttons.min.js" th:src="@{/js/dataTables.buttons.min.js}"></script>
+        <script src="../static/js/jquery.dataTables.min.js" th:src="@{/js/jquery.dataTables.min.js}"></script>
+
+    </head>
+    <body>
+        <div class="row" style="padding-bottom: 10px; padding-top: 10px">
+            <h3 style="text-align: center;">Liste des Modules de l'UE : &nbsp;<span th:text="${ue.libelle}"></span> </h3>
+            <div style="text-align: center">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form_Ajouter_Module" >Ajouter Module</button>
+            </div>
+        </div>
+        <!--Debut popup ajouter un Module -->
+        <div data-dismiss="modal" style = ""...>
+            <div class="modal fade" id="form_Ajouter_Module"> 
+                <div class="modal-dialog" >
+                    <div class="modal-content panel-success" >
+                        <!--modal header-->
+                        <div class="modal-header panel-haeding">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <h4 class="modal-title"style="">Ajouter un Module</h4>
+
+                        </div>
+                        <!--modal body-->
+                        <form th:action="@{ajouter_module_ue}" method="post">
+
+                            <div class="modal-body">
+                                <input name="ue" th:value="${ue.id}"/><br><br>
+                                <label for="libelle">Libelle</label><br>
+                                <input type="text" id="libelle" name="libelle"><br><br>
+                                <label for="cours">Cours</label><br>
+                                <input type="text" id="cours" name="cours"><br><br>
+                                <label for="duree">Duree</label><br>
+                                <input type="number" id="duree" name="duree"><br><br>
+                                <label for="objectif">objectifs</label><br>
+                                <input type="text" id="objectifs" name="Objectifs"><br><br>
+                                <label for="description">Description</label><br>
+                                <input type="text" id="description" name="description"><br><br>
+
+                                
+                            </div>
+                            <!-- modal footer -->
+                            <div class="modal-footer">
+                                
+                                <div class="col-md-6 text-left">
+                                    <input type="submit" class="btn btn-primary" value="Ajouter">
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--fin popup ajouter une Module-->
+
+
+        <!-- Debut lister tout les Module -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="table_Module">
+                <thead>
+                <tr>
+        
+                    <th>Libelle</th>
+                    <th>Cours</th>
+                    <th>Duree</th>
+                    <th>Objectifs</th>
+                    <th>Description</th>
+                    <th>Operations</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="module : ${listeDesModules}">
+                    <td th:text="${module.libelle}"></td>
+                    <td th:text="${module.cours}"></td>
+                    <td th:text="${module.duree}"></td>
+                    <td th:text="${module.Objectifs}"></td>
+                    <td th:text="${module.description}"></td>
+                    <td>
+                        <button class="btn btn-info btn-sm" data-title="Edit" data-toggle="modal" th:attr="data-target='#form_Modifier_Module'+${module.id}" >
+                            Modifier           
+                        </button>
+                        
+                        <button class="btn btn-danger btn-sm" data-title="Delete" data-toggle="modal" th:attr="data-target='#form_Supprimer_Module'+${module.id}">
+                            Supprimer           
+                        </button>
+                    </td>
+               
+        
+
+                    <!-- Debut Popup Modifier Module -->
+
+                    <div data-dismiss="modal">
+                        <div class="modal fade" th:attr="id='form_Modifier_Module'+${module.id}" >
+                            <div class="modal-dialog" >
+                                <div class="modal-content panel-info" >
+                                    <!-- modal header -->
+                                    <div class="modal-header panel-haeding" >
+                                        <button type="button" class="close" data-dismiss="modal">x</button>
+                                        <h4 class="modal-title" style="text-align: center;">Modifier Module</h4>
+                                    </div>
+                                    <!-- modal Body-->
+                                    <form th:action="@{modifier_module_ue}" method="post">
+                                        <div class="modal-body">
+                                            <div style="display: none">
+                                                <input name="id" th:value="${module.id}" />
+                                                <input name="ue" th:value="${ue.id}" />
+                                            </div>
+                                           
+                                        
+                                            <div>
+                                                <label for="libelle">Libelle</label><br>
+                                                <input type="text" id="libelle" name="libelle" th:value="${module.libelle}"><br><br>
+                                            </div>
+                                            <div>
+                                                <label for="cours">Cours</label><br>
+                                                <input type="text" id="cours" name="cours" th:value="${module.cours}"><br><br>
+                                            </div>
+                                            <div>
+                                                <label for="duree">Duree</label><br>
+                                                <input type="number" id="duree" name="duree" th:value="${module.duree}" ><br><br>
+                                            </div>
+                                            <div>
+                                                <label for="objectifs">Objectifs</label><br>
+                                                <input type="text" id="objectifs" name="objectifs" th:value="${module.objectifs}"><br><br>
+                                            </div>
+                                            <div>
+                                                <label for="description">Description</label><br>
+                                                <input type="text" id="description" name="description" th:value="${module.description}"><br><br>
+                                            </div>
+                                           
+                                        </div>
+                                        <!-- modal footer-->
+                                        <div class="modal-footer">
+                                            <div class="col-md-6 text-left">
+                                                <input type="submit" class="btn btn-primary" value="Modifier">
+                                            </div>
+                                            <div class="col-md-6 text-right">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin Popup Modifier EC -->
+
+/
+
+
+
+
+
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+        <!-- Debut Datatable lister Module -->
+        <script>
+            $(document).ready(function() {
+                $("#table_Module").DataTable({
+
+                });
+            })
+        </script>
+        <!-- Fin Datatable lister EC -->
+
+    </body>
+    
+</html>
