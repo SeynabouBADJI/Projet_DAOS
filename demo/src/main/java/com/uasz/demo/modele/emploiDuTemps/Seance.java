@@ -1,5 +1,5 @@
 package com.uasz.demo.modele.emploiDuTemps;
-import java.util.List;
+
 import com.uasz.demo.modele.repartition.Repartition;
 
 import jakarta.persistence.Entity;
@@ -26,20 +26,13 @@ public class Seance {
     private int numero;
     private String datecreation;
     private String darecreation;
-
     @ManyToOne 
     private Salle salle;
     @ManyToOne 
     private Repartition repartition;
-
     @ManyToOne 
     private Emploi emploi ;
     @OneToOne(mappedBy = "seance")
-    //@ManyToOne 
-    //private Emploi emploi ;
-    @ManyToOne 
-    private Emploi emploi ;
-    @OneToOne
     private Deroulement deroulement;
        
 

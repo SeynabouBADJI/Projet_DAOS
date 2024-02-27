@@ -22,7 +22,7 @@ public class Batiment {
     private String code;
     private String position;
     private String description;
-    private String darecreation;
+    private String datecreation;
 
     @OneToMany(mappedBy = "batiment")
     private List<Salle> salle;

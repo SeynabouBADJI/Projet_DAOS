@@ -23,7 +23,7 @@ public class Salle {
     private String code;
     private int capacite;
     private String description;
-    private String darecreation;
+    private String datecreation;
 
     @ManyToOne 
     private Batiment batiment;
