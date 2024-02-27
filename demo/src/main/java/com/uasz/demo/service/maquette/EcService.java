@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.uasz.demo.modele.maquette.Ec;
-import com.uasz.demo.modele.maquette.Ue;
 import com.uasz.demo.repository.maquette.ECRepository;
 
 @Service

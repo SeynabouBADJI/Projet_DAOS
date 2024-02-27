@@ -1,5 +1,4 @@
 package com.uasz.demo.modele.emploiDuTemps;
-
 import java.util.List;
 import com.uasz.demo.modele.repartition.Repartition;
 
@@ -8,7 +7,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,6 +37,8 @@ public class Seance {
     @OneToOne(mappedBy = "seance")
     //@ManyToOne 
     //private Emploi emploi ;
+    @ManyToOne 
+    private Emploi emploi ;
     @OneToOne
     private Deroulement deroulement;
        

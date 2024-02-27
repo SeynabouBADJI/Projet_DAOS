@@ -27,7 +27,7 @@ public class Salle {
 
     @ManyToOne 
     private Batiment batiment;
-    @OneToMany(mappedBy = "seance")
+    @OneToMany(mappedBy = "salle")
     private List<Seance> seance;
        
 
