@@ -22,10 +22,8 @@ import lombok.NoArgsConstructor;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type" , length = 3)
 public abstract class Enseignant {
-
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String nom;
     private String prenom;
