@@ -27,6 +27,7 @@ public class Ec {
     private int tpe;
     private int coefficient;
     private String description;
+    private String datecreation;
 
     @ManyToOne
     private Ue ue;

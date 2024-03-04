@@ -26,7 +26,7 @@ public class EnseignantRestController {
     private EnseignantService enseignantService;
 
     @GetMapping(path = "/ens")
-    public List lister_ens(){
+    public List<Enseignant> lister_ens(){
         return enseignantService.lister_Ens();
 
     

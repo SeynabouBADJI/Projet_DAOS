@@ -1,10 +1,13 @@
 package com.uasz.demo.modele.maquette;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,5 +31,11 @@ public class Module {
     private Ue ue;
     @ManyToOne
     private Ec ec;
-    
+    @ManyToOne
+    private Maquette maquette;
+    @ManyToOne
+    private Semestre semestre;
+    @OneToMany(mappedBy = "module")
+    private List<Enseignement> enseignement;
+
 }

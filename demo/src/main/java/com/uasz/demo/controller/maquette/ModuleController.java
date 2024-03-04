@@ -1,4 +1,4 @@
-package com.uasz.demo.controller.maquette;
+/* package com.uasz.demo.controller.maquette;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,3 +47,4 @@ public class ModuleController {
 
     
 }
+ */

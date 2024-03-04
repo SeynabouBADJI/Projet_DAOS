@@ -17,7 +17,7 @@ public class EcService {
 
     @Autowired
     private ECRepository ecRepository;
-    public void ajouterEC(Ec ec){
+   /*  public void ajouterEC(Ec ec){
         ecRepository.save(ec);
     }
 
@@ -45,7 +45,7 @@ public class EcService {
         ecRepository.delete(ec);
 
      }
-    
+    */ 
 
      //partie REST 
 

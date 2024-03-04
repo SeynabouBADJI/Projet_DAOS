@@ -2,9 +2,6 @@ package com.uasz.demo.modele.repartition;
 
 
 import java.util.List;
-
-import com.uasz.demo.modele.maquette.Ec;
-
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
