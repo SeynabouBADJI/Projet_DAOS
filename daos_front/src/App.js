@@ -21,11 +21,12 @@ function App() {
       <Router>
         <div className="AppContainer">
           <AppBar position="static">
-            <Toolbar >
-              <img src='./images/logo.jpg' className='logo'/><br/>
-              <MenuBookIcon  style={{ marginLeft: '20px' }}  />
-              <Typography variant="h4">Bienvenue sur le Portail Administratif de l'Université ! </Typography>
-            </Toolbar>
+          <Toolbar>
+            <img src='./images/logo.jpg' className='logo' /><br />
+            <MenuBookIcon style={{ marginLeft: '20px' }} />
+            <Typography variant="h4" style={{ marginLeft: '10px' }}>Bienvenue sur l'Administratif de l'Université !</Typography>
+          </Toolbar>
+
           </AppBar>
 
           <Switch>
@@ -36,7 +37,8 @@ function App() {
             <Route path='/Dashboard' component={Dashboard}/>
             <Route path='/Enseignant' component={Enseignant}/>
             <Route path='/Repartition' component={Repartition}/>
-            <Route path='/Dashboard' component={Dashboard} /> {/* Ajoutez cette ligne */}
+            <Route path='/Dashboard' component={Dashboard} /> 
+           
 
             {/* <Route path='/Classes' component={Classes}/> */}
           </Switch>

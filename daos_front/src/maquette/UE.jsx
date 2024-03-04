@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 import AjouterUE from "./AjouterUE";
 import ModifierUE from './ModifierUE';
+import '../styles/UE.css';
 
 function UE() {
   const [ue, setUe] = useState([]);
@@ -119,9 +120,11 @@ function UE() {
 
   return (
     <>
+      <div className="ajout">
       <Stack mt={2} mb={2}>
         <AjouterUE ajouterUE={ajouterUE} />
       </Stack>
+      </div>
       <div style={{ height: 600, width: '100%' }}>
         <DataGrid
           rows={ue}

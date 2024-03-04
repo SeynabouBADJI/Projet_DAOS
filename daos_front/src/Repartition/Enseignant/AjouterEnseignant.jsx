@@ -6,6 +6,10 @@ import {
   DialogContent,
   TextField,
   Button,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
 } from "@mui/material";
 
 function AjouterEnseignant(props) {
@@ -15,7 +19,9 @@ function AjouterEnseignant(props) {
     nom: "",
     prenom: "",
     grade: "",
-    statut: "",
+    matricule:"",
+    specialite:"",
+    type: "permanent", 
   };
 
   const [enseignant, setEnseignant] = useState(initialEnseignantState);
@@ -35,7 +41,6 @@ function AjouterEnseignant(props) {
   const handleSave = () => {
     console.log("Enseignant à sauvegarder :", enseignant);
     props.ajouterEnseignant(enseignant);
-    // Réinitialiser l'état après la sauvegarde
     setEnseignant(initialEnseignantState);
     handleClose();
   };
@@ -74,17 +79,43 @@ function AjouterEnseignant(props) {
             value={enseignant.grade}
             onChange={handleChange}
           />
-          <br />
+          <br /><br/>
 
-          <TextField
-            label="Statut"
-            name="statut"
-            variant="standard"
-            value={enseignant.statut}
-            onChange={handleChange}
-          />
-          <br />
+          <FormControl style={{ marginLeft: '10px' }}>
+  <InputLabel id="type-label">Type</InputLabel>
+  <Select
+    labelId="type-label"
+    id="type"
+    name="type"
+    value={enseignant.type}
+    onChange={handleChange}
+  >
+    <MenuItem value="Per">Per</MenuItem>
+    <MenuItem value="Vac">Vacataire</MenuItem>
+  </Select>
+</FormControl>
 
+{enseignant.type === "Per" && (
+  <TextField
+    label="Matricule"
+    name="matricule"
+    variant="standard"
+    value={enseignant.matricule}
+    onChange={handleChange}
+    style={{ marginLeft: '10px' }}
+  />
+)}
+
+{enseignant.type === "Vac" && (
+  <TextField
+    label="Specialite"
+    name="specialite"
+    variant="standard"
+    value={enseignant.specialite}
+    onChange={handleChange}
+    style={{ marginLeft: '10px' }}
+  />
+)}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleSave}>Sauvegarder</Button>

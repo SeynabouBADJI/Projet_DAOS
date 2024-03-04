@@ -8,6 +8,7 @@ import Snackbar from '@mui/material/Snackbar';
 import ModifierEC from "./ModifierEC";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import '../../styles/EC.css';
 function ECListe(){
     const [ecListe, setEcListe] = useState([])
     const [deleteSnackbarOpen, setDeleteSnackbarOpen] = useState(false);
@@ -123,9 +124,11 @@ function ECListe(){
   
     return (
       <>
+        <div className="ajout">
         <Stack mt={2} mb={2}>
           <AjouterEC ajouterEC={ajouterEC} />
         </Stack>
+        </div>
         <div style={{ height: 600, width: '100%' }}>
           <DataGrid
             rows={ecListe}

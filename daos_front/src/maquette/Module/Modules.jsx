@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Button, IconButton, Snackbar, Stack } from "@mui/material";
+import {  IconButton, Snackbar, Stack } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import AjouterModules from "./AjouterModules";
 import ModifierModules from "./ModifierModules";
+import '../../styles/Module.css';
 function Modules() {
   const [modules, setModules] = useState([]);
   const [deleteSnackbarOpen, setDeleteSnackbarOpen] = useState(false);
@@ -110,9 +111,11 @@ function Modules() {
 
   return (
     <>
+      <div className="ajout">
       <Stack mt={2} mb={2}>
         <AjouterModules ajouterModules={ajouterModules} />
       </Stack>
+      </div>
       <div style={{ height: 600, width: '100%' }}>
         <DataGrid
           rows={modules}

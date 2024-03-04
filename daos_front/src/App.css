@@ -1,3 +1,4 @@
 .logo {
   max-width: 100px; /* ajustez cette valeur selon vos besoins */
+  border-radius: 50%;
 }

@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#0fa73d', // Remplacez cette valeur par la couleur verte de votre choix
+      main: '#156d25', // Remplacez cette valeur par la couleur verte de votre choix
     },
   },
 });

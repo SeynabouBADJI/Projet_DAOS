@@ -8,7 +8,6 @@ function ModifierEnseignant(props){
     nom: "",
     prenom: "",
     grade: "",
-    statut: "",
   })
   
   const handleClickOpen = () => {
@@ -17,7 +16,6 @@ function ModifierEnseignant(props){
       nom: props.data.row.nom,
       prenom: props.data.row.prenom,
       grade: props.data.row.grade,
-      statut: props.data.row.statut,
     });
     setOpen(true);
   };
@@ -74,14 +72,7 @@ function ModifierEnseignant(props){
           />
           <br />
 
-          <TextField
-            label="Statut"
-            name="statut"
-            variant="standard"
-            value={enseignant.statut}
-            onChange={handleChange}
-          />
-          <br />
+          
 
         </DialogContent>
         <DialogActions>

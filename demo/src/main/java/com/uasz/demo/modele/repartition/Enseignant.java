@@ -3,7 +3,6 @@ package com.uasz.demo.modele.repartition;
 
 import java.util.List;
 
-import com.uasz.demo.modele.maquette.Ec;
 
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
@@ -29,10 +28,8 @@ public abstract class Enseignant {
     private String prenom;
     private String grade;
     private String datecreation;
-     @OneToMany(mappedBy = "enseignant")
+    @OneToMany(mappedBy = "enseignant")
     private List<Repartition> repartition;
-
     
-     
     
 }

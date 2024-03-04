@@ -19,36 +19,32 @@ import com.uasz.demo.service.repartition.EnseignantService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/repartition")
-
-
 public class EnseignantRestController {
     @Autowired
     private EnseignantService enseignantService;
 
-    @GetMapping(path = "/ens")
+    @GetMapping(path = "/enseignant")
     public List lister_ens(){
         return enseignantService.lister_Ens();
-
-    
     }
-    @GetMapping(path = "/ens/{id}")
+    @GetMapping(path = "/enseignant/{id}")
     public Enseignant rechercher_ens(@PathVariable Long id){
         return enseignantService.rechercher_Ens(id);
     }
 
 
-    @PostMapping(path="/ens")
+    @PostMapping(path="/enseignant")
     public Enseignant ajouter_ens(@RequestBody Enseignant ens){
         return enseignantService.ajouter_Ens(ens);
     }
 
-    @PutMapping(path = "/ens/{id}")
+    @PutMapping(path = "/enseignant/{id}")
     public Enseignant modifier_ens (@RequestBody Enseignant ens , @PathVariable Long id){
         return enseignantService.modifier_Ens(ens, id);
 
     }
 
-    @DeleteMapping(path = "/ens/{id}")
+    @DeleteMapping(path = "/enseignant/{id}")
     public void supprimer_ens(@PathVariable Long id){
         enseignantService.supprimer_Ens(id);
     }
