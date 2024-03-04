@@ -8,17 +8,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.uasz.demo.modele.maquette.Classe;
-import com.uasz.demo.modele.maquette.Formation;
-
 import com.uasz.demo.modele.maquette.Semestre;
 
 @Repository
 public interface SemestreRepository extends JpaRepository <Semestre ,Long>{
     @Query("select mod FROM Module mod WHERE mod.semestre = ?1")
-    List<Formation> findBySemestre(Semestre semestre);
-
-
-
+    List<Module> findBySemestre(Semestre semestre);
     @Query("select cla FROM Classe cla WHERE cla.semestre = ?1")
     List<Classe> findBySemestreClasse(Semestre semestre);
 
