@@ -1,5 +1,6 @@
 package com.uasz.demo.repository.maquette;
 
+
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;

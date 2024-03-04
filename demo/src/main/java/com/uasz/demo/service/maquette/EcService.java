@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.uasz.demo.modele.maquette.Ec;
-import com.uasz.demo.modele.maquette.Ue;
 import com.uasz.demo.repository.maquette.ECRepository;
 
 @Service
@@ -17,7 +16,7 @@ public class EcService {
 
     @Autowired
     private ECRepository ecRepository;
-    public void ajouterEC(Ec ec){
+   /*  public void ajouterEC(Ec ec){
         ecRepository.save(ec);
     }
 
@@ -45,7 +44,7 @@ public class EcService {
         ecRepository.delete(ec);
 
      }
-    
+    */ 
 
      //partie REST 
 

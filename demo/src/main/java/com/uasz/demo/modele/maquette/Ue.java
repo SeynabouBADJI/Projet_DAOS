@@ -25,11 +25,11 @@ public class Ue {
     private String description;
     private int coefficient;
     private int credit;
-    private String dateCreation;
+    private String datecreation;
 
     @ManyToOne
     private Utilisateur utilisateur;
-
+    
     @OneToMany(mappedBy = "ue")
     private List<Ec> ecs;
 

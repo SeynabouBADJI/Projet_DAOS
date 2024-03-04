@@ -24,10 +24,10 @@ public class Enseignement {
     private String objectifs;
     private String description;
     private String datecreation;
-    //@ManyToOne
-    //private Classe classe;
-    //@ManyToOne
-    //private Groupe groupe;
+    @ManyToOne
+    private Classe classe;
+    @ManyToOne
+    private Groupe groupe;
     @ManyToOne
     private Module module;
      @OneToMany(mappedBy = "enseignement")

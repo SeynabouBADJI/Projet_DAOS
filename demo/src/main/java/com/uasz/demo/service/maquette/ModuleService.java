@@ -3,45 +3,47 @@ package com.uasz.demo.service.maquette;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.uasz.demo.modele.maquette.Module;
 import com.uasz.demo.repository.maquette.ModuleRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-
-@Transactional
 @Service
+@Transactional
 
 public class ModuleService {
+     @Autowired
+    private ModuleRepository moduleRepository;
 
-@Autowired
-private ModuleRepository moduleRepository;
+    //partie REST 
 
-public void ajouterModule(Module module){
-    moduleRepository.save(module);
-}
 
-public List<Module> listerToutModules(){
-    return moduleRepository.findAll();
-}
-public Module rechercherModule(Long id){
-    return moduleRepository.getById(id);
-}
-public void modifierModule (Module module){
-     Module moduleModifier=moduleRepository.getById(module.getId());        
-     moduleModifier.setLibelle(module.getLibelle());
-     moduleModifier.setCours(module.getCours());
-     moduleModifier.setDuree(module.getDuree());
-     moduleModifier.setObjectifs(module.getObjectifs());
-     moduleModifier.setDescription(module.getDescription());
-     moduleModifier.setUe(module.getUe()); 
-     moduleRepository.save(moduleModifier);
 
-}
-public void supprimerModule(Module module){
-    moduleRepository.delete(module);
 
-}
+   public List<Module> lister_Module(){
+      return moduleRepository.findAll();
+   }
+    
 
+   public Module rechercher_Module(Long id){
+      return moduleRepository.findById(id).get();
+   }
+
+   public Module ajouter_Module(Module module){
+      return moduleRepository.save(module);
+   }
+
+   public Module modifier_Module(Module module, Long id){
+      module.setId(id);
+      return moduleRepository.save(module);
+   }
+
+
+   public void supprimer_Module(Long id){
+      moduleRepository.deleteById(id);
+   }
+
+
+    
 }

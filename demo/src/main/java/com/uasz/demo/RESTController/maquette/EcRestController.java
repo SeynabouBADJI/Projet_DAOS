@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uasz.demo.modele.maquette.Ec;
-import com.uasz.demo.modele.maquette.Ue;
 import com.uasz.demo.service.maquette.EcService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")

@@ -26,7 +26,7 @@ public class RepartitionRestController {
     private RepartitionService repartitionService;
 
     @GetMapping(path = "/repartition")
-    public List lister_repartition(){
+    public List<Repartition> lister_repartition(){
         return repartitionService.lister_Repartition();
 
     

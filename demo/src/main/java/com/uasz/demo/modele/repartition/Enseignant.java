@@ -1,9 +1,10 @@
 package com.uasz.demo.modele.repartition;
-
-
 import java.util.List;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6cebf34e8177d1a165ff98f7a8eb1b8c2326bef5
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -35,7 +35,7 @@ public class UeService {
          ueModifier.setUtilisateur(ue.getUtilisateur());
          ueModifier.setCredit(ue.getCredit());
          ueModifier.setCoefficient(ue.getCoefficient());
-         ueModifier.setDateCreation(ue.getDateCreation());
+         ueModifier.setDatecreation(ue.getDatecreation());
          ueRepository.save(ueModifier);
 
      }
