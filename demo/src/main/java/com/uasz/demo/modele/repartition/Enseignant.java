@@ -34,6 +34,7 @@ public abstract class Enseignant {
     @OneToMany(mappedBy = "enseignant")
     @JsonIgnore
     private List<Repartition> repartition;
+    //
 
 
 }
