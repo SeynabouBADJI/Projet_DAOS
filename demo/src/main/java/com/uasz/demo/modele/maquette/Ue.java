@@ -2,6 +2,7 @@ package com.uasz.demo.modele.maquette;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.uasz.demo.modele.utilisateur.Utilisateur;
 
 import jakarta.persistence.Entity;
@@ -31,9 +32,11 @@ public class Ue {
     private Utilisateur utilisateur;
     
     @OneToMany(mappedBy = "ue")
+      @JsonIgnore
     private List<Ec> ecs;
 
     @OneToMany(mappedBy = "ue")
+    @JsonIgnore
     private List<Module> module;
        
 }

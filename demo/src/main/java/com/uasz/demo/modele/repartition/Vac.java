@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 @DiscriminatorValue("Vac")
-
-
-public class Vacataire extends Enseignant {
+public class Vac extends Enseignant {
     private String specialite;
 
+    
     
 }

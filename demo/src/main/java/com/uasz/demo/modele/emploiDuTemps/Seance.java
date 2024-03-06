@@ -1,5 +1,6 @@
 package com.uasz.demo.modele.emploiDuTemps;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.uasz.demo.modele.repartition.Repartition;
 
 import jakarta.persistence.Entity;
@@ -33,6 +34,7 @@ public class Seance {
     @ManyToOne 
     private Emploi emploi ;
     @OneToOne(mappedBy = "seance")
+      @JsonIgnore
     private Deroulement deroulement;
        
 

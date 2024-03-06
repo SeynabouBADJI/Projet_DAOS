@@ -6,9 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.uasz.demo.modele.maquette.Ue;
-import com.uasz.demo.modele.repartition.Enseignant;
 import com.uasz.demo.service.maquette.UeService;
-import com.uasz.demo.service.repartition.EnseignantService;
 
 @SpringBootApplication
 public class GestionDaosApplication implements CommandLineRunner{
@@ -19,7 +17,7 @@ public class GestionDaosApplication implements CommandLineRunner{
 	}
 	@Autowired
 	private UeService ueService;
-	private EnseignantService enseignantService;
+	
 	@Override
 
 	public void run(String... args)throws Exception {

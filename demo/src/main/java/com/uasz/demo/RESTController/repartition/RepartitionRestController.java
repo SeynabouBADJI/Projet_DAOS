@@ -25,30 +25,30 @@ public class RepartitionRestController {
     @Autowired
     private RepartitionService repartitionService;
 
-    @GetMapping(path = "/repartition")
+    @GetMapping(path = "/reparti")
     public List<Repartition> lister_repartition(){
         return repartitionService.lister_Repartition();
 
     
     }
-    @GetMapping(path = "/repartition/{id}")
+    @GetMapping(path = "/reparti/{id}")
     public Repartition rechercher_repartition(@PathVariable Long id){
         return repartitionService.rechercher_Repartition(id);
     }
 
 
-    @PostMapping(path="/repartition")
+    @PostMapping(path="/reparti")
     public Repartition ajouter_repartition(@RequestBody Repartition repartition){
         return repartitionService.ajouter_Repartition(repartition);
     }
 
-    @PutMapping(path = "/repartition/{id}")
+    @PutMapping(path = "/reparti/{id}")
     public Repartition modifier_repartition (@RequestBody Repartition repartition , @PathVariable Long id){
         return repartitionService.modifier_Repartition(repartition, id);
 
     }
 
-    @DeleteMapping(path = "/repartition/{id}")
+    @DeleteMapping(path = "/reparti/{id}")
     public void supprimer_repartition(@PathVariable Long id){
         repartitionService.supprimer_Repartition(id);
     }

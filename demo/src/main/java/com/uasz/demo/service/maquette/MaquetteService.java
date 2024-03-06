@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import com.uasz.demo.modele.maquette.Maquette;
+import com.uasz.demo.modele.maquette.Module;
 import com.uasz.demo.repository.maquette.MaquetteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,6 +44,10 @@ public class MaquetteService {
 
    public void supprimer_Maquette(Long id){
       maquetteRepository.deleteById(id);
+   }
+
+   public List<Module> lister_Module_Maquette(Maquette maquette ){
+      return maquetteRepository.findByMaquette(maquette);
    }
 
 

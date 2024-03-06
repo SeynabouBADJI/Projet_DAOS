@@ -88,7 +88,10 @@ public class UeService {
       return ueRepository.findByUe(ue);
    }
 
-   
+   public List<Module> lister_Module_UE(Ue ue ){
+      return ueRepository.findByUeModule(ue);
+   }
+
 
 
 

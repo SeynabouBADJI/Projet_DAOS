@@ -2,6 +2,8 @@ package com.uasz.demo.modele.maquette;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +25,7 @@ public class Cycle {
     private String datecreation;
 
     @OneToMany(mappedBy = "cycle")
+      @JsonIgnore
     private List<Niveau> niveau;
 
        
