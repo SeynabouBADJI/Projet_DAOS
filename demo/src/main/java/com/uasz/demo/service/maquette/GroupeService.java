@@ -3,7 +3,7 @@ package com.uasz.demo.service.maquette;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import com.uasz.demo.modele.maquette.Enseignement;
 import com.uasz.demo.modele.maquette.Groupe;
 import com.uasz.demo.repository.maquette.GroupeRepository;
 import org.springframework.stereotype.Service;
@@ -44,6 +44,10 @@ public class GroupeService {
       groupeRepository.deleteById(id);
    }
 
+
+   public List<Enseignement> lister_Enseignement_Groupe(Groupe groupe){
+      return groupeRepository.findByGroupeEnseignement(groupe);
+   }
 
     
 }

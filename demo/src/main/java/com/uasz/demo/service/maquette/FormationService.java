@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.uasz.demo.modele.maquette.Classe;
 import com.uasz.demo.modele.maquette.Formation;
 import com.uasz.demo.repository.maquette.FormationRepository;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,13 @@ public class FormationService {
    public void supprimer_Formation(Long id){
       formationRepository.deleteById(id);
    }
+   
+   
+   public List<Classe> lister_Classe_Formation(Formation formation ){
+         return formationRepository.findByFormation(formation);
+      }
 
+   
 
     
 }

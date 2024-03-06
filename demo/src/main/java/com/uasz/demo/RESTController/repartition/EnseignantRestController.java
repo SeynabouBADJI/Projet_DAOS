@@ -22,14 +22,9 @@ import com.uasz.demo.service.repartition.EnseignantService;
 public class EnseignantRestController {
     @Autowired
     private EnseignantService enseignantService;
-
-<<<<<<< HEAD
-    @GetMapping(path = "/enseignant")
-    public List lister_ens(){
-=======
+   
     @GetMapping(path = "/ens")
     public List<Enseignant> lister_ens(){
->>>>>>> 6cebf34e8177d1a165ff98f7a8eb1b8c2326bef5
         return enseignantService.lister_Ens();
     }
     @GetMapping(path = "/enseignant/{id}")

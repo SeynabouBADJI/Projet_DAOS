@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.uasz.demo.modele.repartition.Vacataire;
+import com.uasz.demo.modele.repartition.Vac;
 import com.uasz.demo.repository.repartition.VacRepository;
 
 
@@ -23,20 +23,20 @@ public class VacService {
 
 
 
-   public List<Vacataire> lister_Vacataire(){
+   public List<Vac> lister_Vacataire(){
       return vacRepository.findAll();
    }
     
 
-   public Vacataire rechercher_Vacataire(Long id){
+   public Vac rechercher_Vacataire(Long id){
       return vacRepository.findById(id).get();
    }
 
-   public Vacataire ajouter_Vacataire(Vacataire vac){
+   public Vac ajouter_Vacataire(Vac vac){
       return vacRepository.save(vac);
    }
 
-   public Vacataire modifier_Vacataire(Vacataire vac, Long id){
+   public Vac modifier_Vacataire(Vac vac, Long id){
       vac.setId(id);
       return vacRepository.save(vac);
    }

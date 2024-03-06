@@ -3,8 +3,8 @@ package com.uasz.demo.service.maquette;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.uasz.demo.modele.maquette.Filiere;
+import com.uasz.demo.modele.maquette.Formation;
 import com.uasz.demo.repository.maquette.FiliereRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,6 +43,11 @@ public class FiliereService {
    public void supprimer_Filiere(Long id){
       filiereRepository.deleteById(id);
    }
+
+   public List<Formation> lister_Formation_Filiere(Filiere filiere){
+      return filiereRepository.findByFiliere(filiere);
+   }
+
 
 
     

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.uasz.demo.modele.emploiDuTemps.Emploi;
+import com.uasz.demo.modele.emploiDuTemps.Seance;
 import com.uasz.demo.repository.emploiDuTemps.EmploiRepository;
 
 @Service
@@ -41,7 +42,10 @@ public class EmploiService {
         emploiRepository.deleteById(id);
     }
 
-   
+
+    public List<Seance> lister_EC_UE(Emploi emploi){
+      return emploiRepository.findByEmploi(emploi);
+   }
     
 
 

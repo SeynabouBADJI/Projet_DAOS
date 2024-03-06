@@ -3,7 +3,7 @@ package com.uasz.demo.service.maquette;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import com.uasz.demo.modele.maquette.Formation;
 import com.uasz.demo.modele.maquette.Niveau;
 import com.uasz.demo.repository.maquette.NiveauRepository;
 import org.springframework.stereotype.Service;
@@ -42,6 +42,11 @@ public class NiveauService {
 
    public void supprimer_Niveau(Long id){
       niveauRepository.deleteById(id);
+   }
+
+
+   public List<Formation> lister_Formation_Niveau(Niveau niveau){
+      return niveauRepository.findByNiveau(niveau);
    }
 
 

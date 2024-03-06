@@ -3,8 +3,8 @@ package com.uasz.demo.service.maquette;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.uasz.demo.modele.maquette.Enseignement;
+import com.uasz.demo.modele.repartition.Repartition;
 import com.uasz.demo.repository.maquette.EnseignementRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,6 +43,13 @@ public class EnseignementService {
    public void supprimer_Enseignement(Long id){
       enseignementRepository.deleteById(id);
    }
+
+
+   public List<Repartition> lister_Repartition_Enseignement(Enseignement enseignement  ){
+      return enseignementRepository.findByEnseignement(enseignement);
+   }
+
+
 
 
     

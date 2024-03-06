@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.uasz.demo.modele.maquette.Classe;
+import com.uasz.demo.modele.maquette.Module;
 import com.uasz.demo.modele.maquette.Semestre;
 import com.uasz.demo.repository.maquette.SemestreRepository;
 import org.springframework.stereotype.Service;
@@ -43,6 +45,16 @@ public class SemestreService {
    public void supprimer_Semestre(Long id){
       semestreRepository.deleteById(id);
    }
+
+   public List<Module> lister_Module_Semestre(Semestre semestre ){
+      return semestreRepository.findBySemestre(semestre);
+   }
+
+   public List<Classe> lister_Classe_Semestre(Semestre semestre ){
+      return semestreRepository.findBySemestreClasse(semestre);
+   }
+
+
 
 
     

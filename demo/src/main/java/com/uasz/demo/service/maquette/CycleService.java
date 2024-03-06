@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.uasz.demo.modele.maquette.Cycle;
+
+import com.uasz.demo.modele.maquette.Niveau;
+
 import com.uasz.demo.repository.maquette.CycleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,6 +46,13 @@ public class CycleService {
    public void supprimer_Cycle(Long id){
       cycleRepository.deleteById(id);
    }
+
+
+
+   public List<Niveau> lister_Niveau_Cycle(Cycle cycle){
+      return cycleRepository.findByCycleNiveau(cycle);
+   }
+
 
 
     

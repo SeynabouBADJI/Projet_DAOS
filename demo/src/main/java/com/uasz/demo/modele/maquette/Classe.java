@@ -2,6 +2,8 @@ package com.uasz.demo.modele.maquette;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,8 +32,10 @@ public class Classe {
     @ManyToOne
     private Semestre semestre;
     @OneToMany(mappedBy = "classe")
+      @JsonIgnore
     private List<Groupe> groupe;
     @OneToMany(mappedBy = "classe")
+    @JsonIgnore
     private List<Enseignement> enseignement;
        
 

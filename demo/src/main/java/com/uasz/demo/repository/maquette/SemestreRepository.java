@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.uasz.demo.modele.maquette.Classe;
+import com.uasz.demo.modele.maquette.Module;
 import com.uasz.demo.modele.maquette.Semestre;
 
 @Repository

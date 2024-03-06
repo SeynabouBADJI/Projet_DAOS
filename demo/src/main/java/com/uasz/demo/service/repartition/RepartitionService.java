@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.uasz.demo.modele.emploiDuTemps.Seance;
 import com.uasz.demo.modele.repartition.Repartition;
 import com.uasz.demo.repository.repartition.RepartitionRepository;
 
@@ -42,6 +42,11 @@ public class RepartitionService {
 
    public void supprimer_Repartition(Long id){
     repartitionRepository.deleteById(id);
+   }
+
+   
+    public List<Seance> lister_Seance_Repartition(Repartition repartition ){
+      return repartitionRepository.findByRepartition(repartition);
    }
 
 

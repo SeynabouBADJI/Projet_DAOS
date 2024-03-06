@@ -18,7 +18,7 @@ public interface ClasseRepository extends JpaRepository <Classe ,Long>{
     List<Groupe> findByClasse(Classe classe);
 
     @Query("select enseignement FROM Enseignement enseignement WHERE enseignement.classe = ?1")
-    List<Enseignement> findByClasseModule(Classe classe);
+    List<Enseignement> findByClasseEnseignement(Classe classe);
     
 
 

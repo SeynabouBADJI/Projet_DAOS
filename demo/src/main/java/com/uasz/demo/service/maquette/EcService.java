@@ -74,5 +74,10 @@ public class EcService {
     ecRepository.deleteById(id);
    }
 
+   public List<Module> lister_Module_EC(Ec ec ){
+      return ecRepository.findByEcModule(ec);
+   }
+
+
 
 }

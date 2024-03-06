@@ -14,6 +14,6 @@ import com.uasz.demo.modele.maquette.Module;
 public interface ModuleRepository extends JpaRepository <Module , Long> {
     
      @Query("select ens FROM Enseignement ens WHERE ens.module= ?1")
-    List<Enseignement> findByModule(Module groupe);
+    List<Enseignement> findByModule(Module module);
 
 }

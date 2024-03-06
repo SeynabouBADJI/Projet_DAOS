@@ -49,6 +49,8 @@ public class NiveauRestController {
     public void supprimer_niveau(@PathVariable Long id){
         niveauService.supprimer_Niveau(id);
     }
+
+    
    
     
 }

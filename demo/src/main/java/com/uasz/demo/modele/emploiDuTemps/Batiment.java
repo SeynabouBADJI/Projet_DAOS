@@ -2,6 +2,8 @@ package com.uasz.demo.modele.emploiDuTemps;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +27,7 @@ public class Batiment {
     private String datecreation;
 
     @OneToMany(mappedBy = "batiment")
+      @JsonIgnore
     private List<Salle> salle;
        
 

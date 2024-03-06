@@ -1,6 +1,7 @@
 package com.uasz.demo.modele.repartition;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.uasz.demo.modele.emploiDuTemps.Seance;
 import com.uasz.demo.modele.maquette.Enseignement;
 
@@ -30,6 +31,7 @@ public class Repartition {
     @ManyToOne
     private Enseignement enseignement;
     @OneToMany(mappedBy = "repartition")
+      @JsonIgnore
     private List<Seance> seance;
     
 }

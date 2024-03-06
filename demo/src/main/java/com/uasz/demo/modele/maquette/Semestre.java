@@ -2,6 +2,8 @@ package com.uasz.demo.modele.maquette;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,8 +24,10 @@ public class Semestre {
     private String description;
     private String datecreation;
     @OneToMany(mappedBy = "semestre")
+      @JsonIgnore
     private List<Module> module;
     @OneToMany(mappedBy = "semestre")
+    @JsonIgnore
     private List<Classe> classe;
     
        

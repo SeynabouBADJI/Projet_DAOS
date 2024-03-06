@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.uasz.demo.modele.emploiDuTemps.Salle;
+import com.uasz.demo.modele.emploiDuTemps.Seance;
 import com.uasz.demo.repository.emploiDuTemps.SalleRepository;
 
 @Service
@@ -40,6 +41,10 @@ public class SalleService {
     public void supprimer_Salle(Long id){
         salleRepository.deleteById(id);
     }
+
+     public List<Seance> lister_Seance_Salle(Salle salle){
+      return salleRepository.findBySalle(salle);
+   }
 
    
     

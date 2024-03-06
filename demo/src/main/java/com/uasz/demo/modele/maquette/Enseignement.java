@@ -2,6 +2,7 @@ package com.uasz.demo.modele.maquette;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.uasz.demo.modele.repartition.Repartition;
 
 import jakarta.persistence.Entity;
@@ -31,6 +32,7 @@ public class Enseignement {
     @ManyToOne
     private Module module;
      @OneToMany(mappedBy = "enseignement")
+       @JsonIgnore
     private List<Repartition> repartition;
 
 
